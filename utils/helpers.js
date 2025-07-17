@@ -9,4 +9,18 @@ async function getRiddles() {
     return data;
 }
 
-export {getRiddles};
+
+function sortRiddles(riddles) {
+      const sorted = riddles.map((r, i) => ({
+        id: i + 1,
+        name: r.name,
+        taskDescription: r.taskDescription,
+        correctAnswer: r.correctAnswer
+      }));
+      return sorted;
+}
+
+export {
+    getRiddles,
+    sortRiddles    
+};
