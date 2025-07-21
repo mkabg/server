@@ -1,17 +1,16 @@
 import express from "express";
 import {
-    handleGetPlayers,
-    handleLeaderboard,
-    handleAddPlayer,
-    handleUpdateTime,
-} from "../services/player-services.js";
+    getPlayers,
+    leaderboard,
+    addPlayer,
+    updateTime,
+} from "../ctrl/player-c.js";
 
 const router = express.Router();
 
-router.get("/", handleGetPlayers);
-router.get("/leaderboard", handleLeaderboard);
-router.post("/create", handleAddPlayer);
-router.put("/update", handleUpdateTime);
-router.delete("/delete", handleDeletePlayer);
+router.get("/", getPlayers);
+router.get("/leaderboard", leaderboard);
+router.post("/", addPlayer);
+router.put("/", updateTime);
 
 export default router;
