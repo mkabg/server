@@ -1,6 +1,7 @@
 import express from "express";
 import {
     getPlayers,
+    getPlayerByUsername,
     leaderboard,
     addPlayer,
     updateTime,
@@ -9,8 +10,10 @@ import {
 const router = express.Router();
 
 router.get("/", getPlayers);
+router.put("/", updateTime);
+
+router.get("/:username", getPlayerByUsername)
 router.get("/leaderboard", leaderboard);
 router.post("/", addPlayer);
-router.put("/", updateTime);
 
 export default router;
